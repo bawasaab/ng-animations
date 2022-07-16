@@ -26,6 +26,16 @@ import { Component } from '@angular/core';
         })
       ),
 
+      state(
+        'mousedown', 
+        style({
+          backgroundColor: 'red',
+          border: '1px solid black',
+          width: '100px',
+          height: '100px',
+        })
+      ),
+
       transition(
         'default => clicked', 
         animate('1s 500ms ease-in')
@@ -34,7 +44,18 @@ import { Component } from '@angular/core';
       transition(
         'clicked => default', 
         animate('1s 500ms ease-out')
-      )
+      ),
+
+      transition(
+        'mousedown <=> clicked', 
+        animate('1s 500ms ease-in')
+      ),
+
+      // transition(
+      //   'clicked => mousedown', 
+      //   animate('1s 500ms ease-out')
+      // ),
+
     ])
   ]
 })
