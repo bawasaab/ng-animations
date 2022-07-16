@@ -29,6 +29,11 @@ import { Component } from '@angular/core';
       transition(
         'default => clicked', 
         animate('1s 500ms ease-in')
+      ),
+
+      transition(
+        'clicked => default', 
+        animate('1s 500ms ease-out')
       )
     ])
   ]
