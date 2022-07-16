@@ -61,6 +61,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   clickInfo = 'default';
+  paragraphClicked = 'default';
 
   onClickSimple() {
     this.clickInfo = 'clicked';

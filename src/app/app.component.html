@@ -3,4 +3,8 @@
     (mousedown)="clickInfo = 'mousedown'"
     [@clickedState]="clickInfo"></div>
 
+<p 
+    (click)="paragraphClicked = 'clicked'"
+    [@clickedState]="paragraphClicked">Hello</p>
+
 <router-outlet></router-outlet>
