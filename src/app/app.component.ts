@@ -56,17 +56,59 @@ import { Component } from '@angular/core';
       //   animate('1s 500ms ease-out')
       // ),
 
+    ]),
+
+    // second trigger
+    trigger('numberEnteredState', [
+      state(
+        'unselected',
+        style({
+          border: '1px solid black',
+          padding: '5px',
+          margin: '5px'
+        })
+      ),
+
+      state(
+        'selected',
+        style({
+          border: '2px solid black',
+          padding: '5px',
+          margin: '5px',
+          backgroundColor: 'red',
+          color: 'white'
+        })
+      ),
+
+      transition(
+        'unselected => selected', [
+          // style({
+          //   border: '2px solid black',
+          //   padding: '5px',
+          //   margin: '5px',
+          //   backgroundColor: 'red',
+          //   color: 'white'
+          // }),
+          animate(300)
+        ]
+      )
     ])
   ]
 })
 export class AppComponent {
   clickInfo = 'default';
   paragraphClicked = 'default';
+  numberEntered!: Number;
 
   onClickSimple() {
     this.clickInfo = 'clicked';
     setTimeout(() => {
       this.clickInfo = 'default';
     }, 3000)
+  }
+
+  getNumberEntered($event: any) {
+    this.numberEntered = $event.target.value
+
   }
 }
